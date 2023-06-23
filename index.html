@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Age calculator app</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="cont">
+    <div class="top">
+      <div class="day">
+        <span class="text" id="text">Day</span>
+        <input type="number" placeholder="DD" id="day" min="01" max="31">
+        <span id="errorNote">This field is required</span>
+      </div>
+      <div class="month">
+        <span class="text" id="text1">Month</span>
+        <input type="number" placeholder="MM" id="month" min="01" max="12">
+        <span id="errorNote1">This field is required</span>
+      </div>
+      <div class="year">
+        <span class="text" id="text2">Year</span>
+        <input type="number" placeholder="YYYY" id="year" min="1800" step="10" max="5000">
+        <span id="errorNote2">This field is required</span>
+      </div>
+      <img src="./assets/images/icon-arrow.svg" alt="" class="arrow_icon" id="arrow">
+    </div>
+      <hr>
+    <div class="remain" id="remain">
+      <div class="years">
+        <p id="demo">-&nbsp;-</p>
+        <p id="demoa"><strong>years</strong></p>
+      </div>
+      <div class="months">
+        <p id="demo1">-&nbsp;-</p>
+        <p id="demo1a"><strong>months</strong></p>
+      </div>
+      <div class="days">
+        <p id="demo2">-&nbsp;-</p>
+        <p id="demo2a"><strong>days</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by Klaus_Lynx.
+  </div>
+</body>
+</html>
