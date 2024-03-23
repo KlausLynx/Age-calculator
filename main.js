@@ -138,28 +138,27 @@ function validateMonth() {
         document.getElementById('demo').textContent = '- -';
         return false
     }
-    if(month >= currentMonth(m)) {
-        document.getElementById('demo1').textContent = (month - 12) + currentMonth(m);
-        if((month - 12) + currentMonth(m) >= 1) {
-            document.getElementById('demo1').textContent = (month - 12) + currentMonth(m);
-            document.getElementById('demo1a').textContent = 'months';
-        }
-        if((month - 12) + currentMonth(m) <= 1) {
-            document.getElementById('demo1').textContent = (month - 12) + currentMonth(m);
-            document.getElementById('demo1a').textContent = 'month';
-        }
-        return false
-    }
-    if(currentMonth(m) >= month) {
+    if  (month <= currentMonth(m) ) {
         document.getElementById('demo1').textContent = currentMonth(m) - month;
-        if(currentMonth(m) - month <= 1) {
-            document.getElementById('demo1').textContent = currentMonth(m) - month;
-            document.getElementById('demo1a').textContent = 'month';
+        if (currentMonth(m) - month <= 1) {
+            document.getElementById('demo1a').textContent = 'month';   
         }
-        return false
+        return false 
+    }
+
+    if  (month >= currentMonth(m) ) {
+        document.getElementById('demo1').textContent =  month - currentMonth(m);
+        if (currentMonth(m) - month <= 1) {
+            document.getElementById('demo1a').textContent = 'month';   
+        }
+        if (month - currentMonth(m) > 1) {
+            document.getElementById('demo1a').textContent = 'months';   
+        }
+        return false 
     }
     return true
 }
+ 
 
 const e = new Date();
 const currentYear = (yrs) => {
@@ -178,6 +177,7 @@ function validateYear() {
         inputYear.style.borderColor = '#ff5757';
         return false
     }
+
     if (!year.match(/^\d{4}$/)) {
         document.getElementById('errorNote2').textContent = 'Must be a valid year';
         document.getElementById('demo1').textContent = '- -';
@@ -188,6 +188,7 @@ function validateYear() {
         inputYear.style.borderColor = '#ff5757';
         return false
     }
+
     if(month > 12) {
         document.getElementById('demo2').textContent = '- -';
         document.getElementById('demo').textContent = '- -';
@@ -197,6 +198,7 @@ function validateYear() {
         inputMonth.style.borderColor = '#ff5757';
         return false
     }
+
     if(year > currentYear(e)) {
         document.getElementById('errorNote2').textContent = 'Must be a year in the past';
         document.getElementById('demo1').textContent = '- -';
@@ -208,6 +210,7 @@ function validateYear() {
         inputYear.style.borderColor = '#ff5757';
         return false
     }
+
     if (day <= currentDay(d) && month <= currentMonth(m)) {
         document.getElementById('demo').textContent = currentYear(e) - year;
         return false
@@ -228,6 +231,7 @@ function validateYear() {
         inputYear.style.borderColor = '#ff5757';
         return false
     }
+
     if(day > 29 && month == 2) {
         document.getElementById('errorNote').textContent = 'Must be a valid day';
         document.getElementById('demo1').textContent = '- -';
