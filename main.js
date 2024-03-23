@@ -208,20 +208,16 @@ function validateYear() {
         inputYear.style.borderColor = '#ff5757';
         return false
     }
-    if(day > currentDay(d) && month >= currentMonth(m)) {
-        document.getElementById('demo').textContent = (currentYear(e) - year) - 1;
-        if (currentYear(e) - year <= 1) {
-            document.getElementById('demoa').textContent = 'year';
-        }
-        return false
-    }
-    if(year <= currentYear(e)) {
+    if (day <= currentDay(d) && month <= currentMonth(m)) {
         document.getElementById('demo').textContent = currentYear(e) - year;
-        if (currentYear(e) - year <= 1) {
-            document.getElementById('demoa').textContent = 'year';
-        }
         return false
     }
+
+    if (day > currentDay(d) && month <= currentMonth(m) || month > currentMonth(m)) {
+        document.getElementById('demo').textContent = currentYear(e) - year - 1;
+        return false
+    }
+
     if(day > 31) {
         document.getElementById('errorNote').textContent = 'Must be a valid day'
         document.getElementById('demo1').textContent = '- -';
